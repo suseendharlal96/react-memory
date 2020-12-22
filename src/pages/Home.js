@@ -39,6 +39,9 @@ const Home = () => {
             )}
           </Grid>
         </Grid>
+        <a href="https://github.com/suseendharlal96" target="__blank">
+          Github repo
+        </a>
       </Container>
     </Grow>
   );
