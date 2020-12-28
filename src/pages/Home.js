@@ -39,7 +39,11 @@ const Home = () => {
             )}
           </Grid>
         </Grid>
-        <a href="https://github.com/suseendharlal96" target="__blank">
+        <a
+          style={{ float: "right" }}
+          href="https://github.com/suseendharlal96/memory-react"
+          target="__blank"
+        >
           Github repo
         </a>
       </Container>
