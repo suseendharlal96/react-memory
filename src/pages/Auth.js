@@ -214,14 +214,14 @@ const Auth = () => {
               onDone={({ base64 }) => setForm({ ...form, profile: base64 })}
             /> */}
             <input type="file" id="profile-upload" onChange={handleFile} />
-            {form && form.profile && (
+            {/* {form && form.profile && (
               <img
                 src={form.profile}
                 alt={form.email}
                 height="100px"
                 width="100px"
               />
-            )}
+            )} */}
           </div>
         </>
       )}
