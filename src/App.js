@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Container } from "@material-ui/core";
 
@@ -8,7 +9,7 @@ import Auth from "./pages/Auth";
 import PostDetails from "./components/PostDetails/PostDetails";
 
 function App() {
-  const isLoggedIn = localStorage.getItem("token");
+  const isLoggedIn = useSelector((state) => state.authReducer?.authData?.result);
   return (
     <BrowserRouter>
       <Container maxWidth="xl">
@@ -18,7 +19,10 @@ function App() {
           <Route path="/posts" exact component={Home} />
           <Route path="/posts/search" exact component={Home} />
           <Route path="/posts/:id" exact component={PostDetails} />
-          <Route path="/auth" component={() => (!isLoggedIn ? <Auth /> : <Redirect to="/posts" />)} />
+          <Route
+            path="/auth"
+            component={() => (!isLoggedIn ? <Auth /> : <Redirect to="/posts" />)}
+          />
         </Switch>
       </Container>
     </BrowserRouter>

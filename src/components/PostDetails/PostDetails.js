@@ -92,25 +92,27 @@ const PostDetails = () => {
           <Divider />
           <div className={classes.recommendedPosts}>
             {recommendedPosts.map(({ title, name, message, likes, image, _id }) => (
-              <div
-                style={{ margin: "20px", cursor: "pointer" }}
-                onClick={() => openDetails(_id)}
-                key={_id}
-              >
-                <Typography gutterBottom variant="h6">
-                  {title}
-                </Typography>
-                <Typography gutterBottom variant="subtitle2">
-                  {name}
-                </Typography>
-                <Typography gutterBottom variant="subtitle2">
-                  {message}
-                </Typography>
-                <Typography gutterBottom variant="subtitle1">
-                  Likes: {likes.length}
-                </Typography>
+              <>
+                <div
+                  style={{ margin: "20px", cursor: "pointer" }}
+                  onClick={() => openDetails(_id)}
+                  key={_id}
+                >
+                  <Typography gutterBottom variant="h6">
+                    {title}
+                  </Typography>
+                  <Typography gutterBottom variant="subtitle2">
+                    {name}
+                  </Typography>
+                  <Typography gutterBottom variant="subtitle2">
+                    {message}
+                  </Typography>
+                  <Typography gutterBottom variant="subtitle1">
+                    Likes: {likes.length}
+                  </Typography>
+                </div>
                 <img src={image} width="200px" />
-              </div>
+              </>
             ))}
           </div>
         </div>
